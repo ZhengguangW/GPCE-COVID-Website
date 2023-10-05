@@ -166,7 +166,7 @@ function ready(data){
 
   var projection = d3.geoAlbersUsa()
     .translate([width/2,height/2])
-    .scale(1700)
+    .scale(1400)
   var path = d3.geoPath().projection(projection)
   var states = topojson.feature(data,data.objects.states).features
   console.log(states);
