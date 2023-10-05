@@ -153,8 +153,10 @@
       <p>Click counties on the below U.S. map to see how our model captures spatial patterns across urban and rural counties. Or Type in the County Name and State Name to see the one you are interested in!
         please be in the format of {State, County} e.g: Virginia, Madison
       </p>
-      <input id="CountyName-input" placeholder="State, County"> 
-      <button id="heatmap" onclick="showheatmap()">Show HeatMap of Cases</button>
+      <div id="control-viz"> 
+        <input id="CountyName-input" placeholder="State, County"> 
+        <button id="heatmap" onclick="showheatmap()"> HeatMap of Cases</button>
+      </div>
       <!--
       <div class="county-grid">
         <div class="tab-group">
