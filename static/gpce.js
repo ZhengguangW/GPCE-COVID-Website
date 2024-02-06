@@ -244,6 +244,36 @@ function handleEnterKey(event) {
 inputElement.addEventListener('keyup', handleEnterKey);
 
 
+
+
+
+function toggleHeatmap() {
+  const heatmapButton = document.getElementById('heatmap');
+
+  if (heatmapButton.classList.contains('active')) {
+      // If the button is active, deactivate it and hide the heatmap
+      heatmapButton.classList.remove('active');
+      hideHeatmap();
+  } else {
+      // If the button is not active, activate it and show the heatmap
+      heatmapButton.classList.add('active');
+      showheatmap();
+  }
+}
+
+function hideHeatmap() {
+  // Get all the county elements on your map
+  const countyElements = document.querySelectorAll('.county');
+  console.log("a");
+  // Reset the fill colors of the county elements
+  countyElements.forEach(countyElement => {
+      countyElement.style.fill = ""; 
+      countyElement.classList.remove("active"); 
+  });
+}
+
+
+
 function showheatmap(){
   d3.csv("static/all_counties_manipulated.csv").then(function(data) {
     // Use d3.group to group the data by FIPS code and calculate total cases
